@@ -1052,7 +1052,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:7.5.5, @babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.4.5":
+"@babel/runtime@npm:7.5.5, @babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.4.2, @babel/runtime@npm:^7.4.5, @babel/runtime@npm:^7.5.5":
   version: 7.5.5
   resolution: "@babel/runtime@npm:7.5.5"
   dependencies:
@@ -5784,6 +5784,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hoist-non-react-statics@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "hoist-non-react-statics@npm:3.3.0"
+  dependencies:
+    react-is: "npm:^16.7.0"
+  checksum: 3908e8fb10006018d2de1b93c6679516ed334c060dedbd852b3a4fa7a2bd56d117d0d564cc955a3604dee5fac38eba5f445f9a1bd29cbe9c06a5ad6513ca6993
+  languageName: node
+  linkType: hard
+
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.4
   resolution: "hosted-git-info@npm:2.8.4"
@@ -10298,7 +10307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.8.1, react-is@npm:^16.8.4":
+"react-is@npm:^16.7.0, react-is@npm:^16.8.1, react-is@npm:^16.8.4, react-is@npm:^16.9.0":
   version: 16.9.0
   resolution: "react-is@npm:16.9.0"
   checksum: 8446cd970ba6787e140c7dcc1cc1f2adf0154d72ed4139e0697bc2c3da18cadc9ae8162c2e6352b6dd41c2bf95e1d57da3a62b8c706dac775cd6f421de426150
@@ -10311,9 +10320,31 @@ __metadata:
   dependencies:
     react: "npm:^16.9.0"
     react-dom: "npm:^16.9.0"
+    react-redux: "npm:^7.1.1"
     react-scripts: "npm:3.1.1"
+    redux: "npm:^4.0.4"
+  dependenciesMeta:
+    react-redux:
+      unplugged: true
   languageName: unknown
   linkType: soft
+
+"react-redux@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "react-redux@npm:7.1.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.5.5"
+    hoist-non-react-statics: "npm:^3.3.0"
+    invariant: "npm:^2.2.4"
+    loose-envify: "npm:^1.4.0"
+    prop-types: "npm:^15.7.2"
+    react-is: "npm:^16.9.0"
+  peerDependencies:
+    react: ^16.8.3
+    redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+  checksum: e213805e825124d1f60ec7a733463a4c2b19f64c9f7c260353498623edf5024026d12b062677623bb0c7f9f95f001501051d6e6f12d71b88c4c3179635947931
+  languageName: node
+  linkType: hard
 
 "react-scripts@npm:3.1.1":
   version: 3.1.1
@@ -10487,6 +10518,16 @@ __metadata:
   dependencies:
     minimatch: "npm:3.0.4"
   checksum: 398a7ba9ec7b672abd0675e8211d91478e6b543e7a9fb89c393f83faf76c1da5440068c21bc4df6b7028edd236e27c2ecf1ee0d8d4f7fddb22bb5a8dc2e8f4c1
+  languageName: node
+  linkType: hard
+
+"redux@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "redux@npm:4.0.4"
+  dependencies:
+    loose-envify: "npm:^1.4.0"
+    symbol-observable: "npm:^1.2.0"
+  checksum: 5da1b923a83b3a62f31057f3106c70da4be11f6ef0cc46e024213da02d0ce65dc634c943e3c1e0ef3531f66b30bb24afe61546d86421cb93d918548059328568
   languageName: node
   linkType: hard
 
@@ -11803,6 +11844,13 @@ __metadata:
   bin:
     svgo: ./bin/svgo
   checksum: 2fb826071f036c30c146d3f9a4bf32485263d2c3d8aefa0e4e98a2c3b5b4a115d778019bd5b3af87e9e38b67f0bc34116447c44a50ad7657c9ed9910dc16503b
+  languageName: node
+  linkType: hard
+
+"symbol-observable@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "symbol-observable@npm:1.2.0"
+  checksum: ae72b570fd11a4b905795518c18df9fe57accc615e362e86f852d4faf4d0ab1d7bfa80c85e72c4b321ec500d3f55daabdab6df2666bcb89ee738abf967599734
   languageName: node
   linkType: hard
 
