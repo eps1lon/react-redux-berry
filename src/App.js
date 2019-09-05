@@ -1,7 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import logo from "./logo.svg";
-import "./App.css";
 
 function App(props) {
   const { dispatch, state } = props;
@@ -9,7 +7,7 @@ function App(props) {
   React.useEffect(() => {
     dispatch({ type: "any" });
     dispatch({ type: "any" });
-  }, []);
+  }, [dispatch]);
 
   return (
     <React.Fragment>
