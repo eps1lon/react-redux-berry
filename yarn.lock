@@ -3301,6 +3301,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"component-a@workspace:*, component-a@workspace:packages/component-a":
+  version: 0.0.0-use.local
+  resolution: "component-a@workspace:packages/component-a"
+  peerDependencies:
+    redux: ^4.0.0
+  languageName: unknown
+  linkType: soft
+
 "component-emitter@npm:^1.2.1":
   version: 1.3.0
   resolution: "component-emitter@npm:1.3.0"
@@ -10318,6 +10326,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-redux-berry@workspace:."
   dependencies:
+    component-a: "workspace:*"
     react: "npm:^16.9.0"
     react-dom: "npm:^16.9.0"
     react-redux: "npm:^7.1.1"
@@ -10340,7 +10349,6 @@ __metadata:
     prop-types: "npm:^15.7.2"
     react-is: "npm:^16.9.0"
   peerDependencies:
-    react: ^16.8.3
     redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
   checksum: e213805e825124d1f60ec7a733463a4c2b19f64c9f7c260353498623edf5024026d12b062677623bb0c7f9f95f001501051d6e6f12d71b88c4c3179635947931
   languageName: node

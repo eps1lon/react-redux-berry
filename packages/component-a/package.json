@@ -1,0 +1,7 @@
+{
+  "name": "component-a",
+  "main": "./index.js",
+  "peerDependencies": {
+    "redux": "^4.0.0"
+  }
+}
