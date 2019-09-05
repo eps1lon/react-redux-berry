@@ -95,7 +95,11 @@ __metadata:
     prop-types: "npm:^15.7.2"
     react-is: "npm:^16.9.0"
   peerDependencies:
+    react-dom: ^16.8.3
     redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
   checksum: e213805e825124d1f60ec7a733463a4c2b19f64c9f7c260353498623edf5024026d12b062677623bb0c7f9f95f001501051d6e6f12d71b88c4c3179635947931
   languageName: node
   linkType: hard

@@ -145,6 +145,7 @@ function $$SETUP_STATE(hydrateRuntimeState) {
             ["invariant", "npm:2.2.4"],
             ["loose-envify", "npm:1.4.0"],
             ["prop-types", "npm:15.7.2"],
+            ["react-dom", null],
             ["react-is", "npm:16.9.0"],
             ["redux", "npm:4.0.4"]
           ]
