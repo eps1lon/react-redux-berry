@@ -1,2 +1,3 @@
-/unplugged/
+/unplugged/*
+!/unplugged/react-redux-*
 /build-state.yml
