@@ -1280,6 +1280,32 @@ class FakeFS {
             await this.unlinkPromise(lockPath);
         }
     }
+    async readJsonPromise(p) {
+        const content = await this.readFilePromise(p, `utf8`);
+        try {
+            return JSON.parse(content);
+        }
+        catch (error) {
+            error.message += ` (in ${p})`;
+            throw error;
+        }
+    }
+    async readJsonSync(p) {
+        const content = this.readFileSync(p, `utf8`);
+        try {
+            return JSON.parse(content);
+        }
+        catch (error) {
+            error.message += ` (in ${p})`;
+            throw error;
+        }
+    }
+    async writeJsonPromise(p, data) {
+        return await this.writeFilePromise(p, `${JSON.stringify(data, null, 2)}\n`);
+    }
+    writeJsonSync(p, data) {
+        return this.writeFileSync(p, `${JSON.stringify(data, null, 2)}\n`);
+    }
 }
 exports.FakeFS = FakeFS;
 ;
@@ -3162,7 +3188,7 @@ exports.default = {
     open: libzip_1.default.cwrap(`zip_open`, `number`, [`string`, `number`, `number`]),
     openFromSource: libzip_1.default.cwrap(`zip_open_from_source`, `number`, [`number`, `number`, `number`]),
     close: libzip_1.default.cwrap(`zip_close`, `number`, [`number`]),
-    discard: libzip_1.default.cwrap(`zip_discard`, `void`, [`number`]),
+    discard: libzip_1.default.cwrap(`zip_discard`, null, [`number`]),
     getError: libzip_1.default.cwrap(`zip_get_error`, `number`, [`number`]),
     getName: libzip_1.default.cwrap(`zip_get_name`, `string`, [`number`, `number`, `number`]),
     getNumEntries: libzip_1.default.cwrap(`zip_get_num_entries`, `number`, [`number`, `number`]),
@@ -3183,7 +3209,7 @@ exports.default = {
         setMtime: libzip_1.default.cwrap(`zip_file_set_mtime`, `number`, [`number`, ...number64, `number`, `number`]),
     },
     error: {
-        initWithCode: libzip_1.default.cwrap(`zip_error_init_with_code`, `void`, [`number`, `number`]),
+        initWithCode: libzip_1.default.cwrap(`zip_error_init_with_code`, null, [`number`, `number`]),
         strerror: libzip_1.default.cwrap(`zip_error_strerror`, `string`, [`number`]),
     },
     name: {
@@ -3192,7 +3218,7 @@ exports.default = {
     source: {
         fromUnattachedBuffer: libzip_1.default.cwrap(`zip_source_buffer_create`, `number`, [`number`, `number`, `number`, `number`]),
         fromBuffer: libzip_1.default.cwrap(`zip_source_buffer`, `number`, [`number`, `number`, ...number64, `number`]),
-        free: libzip_1.default.cwrap(`zip_source_free`, `void`, [`number`]),
+        free: libzip_1.default.cwrap(`zip_source_free`, null, [`number`]),
     },
     struct: {
         stat: libzip_1.default.cwrap(`zipstruct_stat`, `number`, []),
